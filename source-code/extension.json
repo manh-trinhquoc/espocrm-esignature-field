@@ -1,0 +1,13 @@
+{
+    "module": "EsignatureField",
+    "name": "Esignature Field",
+    "description": "allow the use of an electronic signature canvas as a field.",
+    "author": "manhtq",
+    "bundled": false,
+    "acceptableVersions": [
+        ">=7.3.0"
+    ],
+    "php": [
+        ">=7.2"
+    ]
+}
