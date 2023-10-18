@@ -2,6 +2,10 @@ Espo.define('esignature-field:views/record/detail', 'views/record/detail', funct
 
     return Dep.extend({
 
+        setup: function () {
+            Dep.prototype.setup.call(this);
+        },
+
         setupActionItems: function (isPrototype = false) {
 
             if (!isPrototype) {

@@ -1,25 +1,13 @@
 {
     "scriptList": [
         "__APPEND__",
-        "client/modules/esignature-field/lib/jsignature/jSignature.min.noconflict.js",
-        "client/modules/esignature-field/lib/jsignature/plugins/signhere/jSignature.SignHere.js",
-        "client/modules/esignature-field/lib/jsignature/modernizr.js",
-        "client/modules/esignature-field/lib/js/esignature.js"
-
-    ],
-    "developerModeScriptList": [
-        "__APPEND__",
-        "client/modules/esignature-field/lib/jsignature/jSignature.min.noconflict.js",
-        "client/modules/esignature-field/lib/jsignature/plugins/signhere/jSignature.SignHere.js",
-        "client/modules/esignature-field/lib/jsignature/modernizr.js",
-        "client/modules/esignature-field/lib/js/esignature.js"
+        "client/custom/modules/esignature-field/lib/jsignature/jSignature.min.noconflict.js",
+        "client/custom/modules/esignature-field/lib/jsignature/plugins/signhere/jSignature.SignHere.js",
+        "client/custom/modules/esignature-field/lib/jsignature/modernizr.js",
+        "client/custom/modules/esignature-field/lib/js/esignature.js"
     ],
     "cssList": [
         "__APPEND__",
-        "client/modules/esignature-field/lib/css/esignature.css"
-    ],
-    "developerModeCssList": [
-        "__APPEND__",
-        "client/modules/esignature-field/lib/css/esignature.css"
+        "client/custom/modules/esignature-field/lib/css/esignature.css"
     ]
 }

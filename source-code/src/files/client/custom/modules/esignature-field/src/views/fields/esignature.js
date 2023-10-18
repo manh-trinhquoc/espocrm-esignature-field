@@ -1,48 +1,18 @@
-/************************************************************************
- * This file is part of EspoCRM.
- *
- * EspoCRM - Open Source CRM application.
- * Copyright (C) 2014-2018 Yuri Kuznetsov, Taras Machyshyn, Oleksiy Avramenko
- * Website: http://www.espocrm.com
- *
- * EspoCRM is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * EspoCRM is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with EspoCRM. If not, see http://www.gnu.org/licenses/.
- *
- * The interactive user interfaces in modified source and object code versions
- * of this program must display Appropriate Legal Notices, as required under
- * Section 5 of the GNU General Public License version 3.
- *
- * In accordance with Section 7(b) of the GNU General Public License version 3,
- * these Appropriate Legal Notices must retain the display of the "EspoCRM" word.
- ************************************************************************/
-/** @preserve
-jSignature v2 "${buildDate}" "${commitID}"
-Copyright (c) 2012 Willow Systems Corp http://willow-systems.com
-Copyright (c) 2010 Brinley Ang http://www.unbolt.net
-MIT License <http://www.opensource.org/licenses/mit-license.php>
-*/
-
-Espo.define('esignature:views/fields/esignature', 'views/fields/base', function (Dep) {
+Espo.define('esignature-field:views/fields/esignature', 'views/fields/base', function (Dep) {
 
     return Dep.extend({
 
         // custom templates
-        detailTemplate: 'esignature:fields/esignature/detail',
-        editTemplate: 'esignature:fields/esignature/edit',
-        listTemplate: 'esignature:fields/esignature/list',
+        detailTemplate: 'esignature-field:fields/esignature/detail',
+        editTemplate: 'esignature-field:fields/esignature/edit',
+        listTemplate: 'esignature-field:fields/esignature/list',
 
         // custom properties
         blankCanvassCode: '',
+
+        setup: function () {
+            Dep.prototype.setup.call(this);
+        },
 
         // custom methods        
         init: function () { // overrides "init" function from base.js
@@ -205,7 +175,7 @@ Espo.define('esignature:views/fields/esignature', 'views/fields/base', function 
             var d = new Date();
             var timestamp = eSignatureISODateString(d);
             // prepare the signature drawing to be stored in the database integrating the timestamp
-            var imageSource = '<img src=data:' + this.$el.jSignature('getData', 'svg') + '<div style=margin-top:-0.5em;font-size:0.7em;font-style:italic;>Electronically signed on ' + timestamp + '</div>';
+            var imageSource = "<img src='data:" + this.$el.jSignature('getData', 'svg') + "'>" + '<div style=margin-top:0.5em;font-size:0.7em;font-style:italic;>Electronically signed on ' + timestamp + '</div>';
             this.notify('Saving...');
             var self = this;
             var model = this.model;

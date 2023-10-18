@@ -27,7 +27,7 @@ Espo.define('esignature-field:views/full-page-esignature-document', 'view', func
             var d = new Date();
             var timestamp = eSignatureISODateString(d);
             // prepare the signature drawing to be stored in the database integrating the timestamp
-            var imageSource = '<img src=data:' + $el.jSignature('getData', 'svg') + '<div style=margin-top:-0.5em;font-size:0.7em;font-style:italic;>Electronically signed on ' + timestamp + '</div>';
+            var imageSource = "<img src='data:" + $el.jSignature('getData', 'svg') + "'>" + '<div style=margin-top:-0.5em;font-size:0.7em;font-style:italic;>Electronically signed on ' + timestamp + '</div>';
             this.notify('Saving...');
             // get the model attributes and load them into a "data" array
             var data = this.model.attributes;
@@ -96,7 +96,7 @@ Espo.define('esignature-field:views/full-page-esignature-document', 'view', func
                     }
                 }
             };
-            xmlhttp.open("POST", url, true);
+            xmlhttp.open("GET", url, true);
             xmlhttp.send();
         }
 

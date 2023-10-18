@@ -6,7 +6,7 @@ use Espo\Core\Exceptions\Forbidden;
 use Espo\Core\Exceptions\NotFound;
 use Espo\Core\Exceptions\Error;
 use Espo\ORM\Entity;
-use Espo\Modules\Esignature\Htmlizer\CustomHtmlizer;
+use Espo\Modules\EsignatureField\Htmlizer\CustomHtmlizer;
 
 class PrintForEsignature extends \Espo\Core\Templates\Services\Base
 {
@@ -99,8 +99,10 @@ class PrintForEsignature extends \Espo\Core\Templates\Services\Base
             $pageOrientationCode = 'L';
         }
 
+        $headerTemplate = $template->get('header') ? $template->get('header') : '';
+
         // render page header
-        $preHtmlHeader = $htmlizer->render($entity, $template->get('header'));
+        $preHtmlHeader = $htmlizer->render($entity, $headerTemplate);
 
         // generate and add, if required,  HTML for the top action buttons (close and print)
         $topActionButtonsHtml = '<button title="Close" class="btn btn-default btn-icon-x-wide" id="documentBackButton" type="button" data-action="closeDocumentFullView"><span class="fa fa-times"></span></button>';
