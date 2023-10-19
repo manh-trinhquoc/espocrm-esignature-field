@@ -64,3 +64,6 @@ Instructions to generate the electronic signature document:
 
 ## Tham khảo
 - clone from job: https://github.com/bandtank/esignature-field-and-documents-for-espocrm
+
+## Note for developer
+- Because Espo client loading js file is different between product mode and developer mode, the developer mode will have some bug related to order of loading file. Developer should code in product mode
